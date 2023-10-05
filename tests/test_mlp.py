@@ -1,4 +1,4 @@
-from mlp_cli import __version__
+from undcli import __version__
 
 
 def test_version():

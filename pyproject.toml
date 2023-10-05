@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "mlp_cli"
+name = "undcli"
 version = "v1.0.5"
 description = ""
 authors = ["Aayushman Choudhary <aayushmanchaudhory@gmail.com>"]
 
 [tool.poetry.scripts]
-mlp = "mlp_cli.main:app"
+mlp = "undcli.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"

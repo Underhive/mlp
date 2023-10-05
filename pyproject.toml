@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mlp"
-version = "0.1.0"
+version = "v1.0.1"
 description = ""
 authors = ["Aayushman Choudhary <aayushmanchaudhory@gmail.com>"]
 

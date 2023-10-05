@@ -1,4 +1,4 @@
-from mlp import __version__
+from mlpcli import __version__
 
 
 def test_version():

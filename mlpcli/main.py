@@ -1,9 +1,9 @@
 import typer
 import os
 import json
-import mlp.commands.storage as storage
-import mlp.commands.env as env
-import mlp.utils as utils
+import mlp_cli.commands.storage as storage
+import mlpcli.commands.env as env
+import mlpcli.utils as utils
 
 app = typer.Typer()
 app.add_typer(env.app, name="env")

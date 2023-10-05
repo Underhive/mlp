@@ -1,7 +1,7 @@
 import typer
 import json
 from enum import Enum
-import mlpcli.utils as utils
+import mlp_cli.utils as utils
 import os
 
 app = typer.Typer()

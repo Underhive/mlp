@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "mlpcli"
+name = "mlp_cli"
 version = "v1.0.4"
 description = ""
 authors = ["Aayushman Choudhary <aayushmanchaudhory@gmail.com>"]
 
 [tool.poetry.scripts]
-mlp = "mlp.main:app"
+mlp = "mlp_cli.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"

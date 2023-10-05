@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mlp_cli"
-version = "v1.0.4"
+version = "v1.0.5"
 description = ""
 authors = ["Aayushman Choudhary <aayushmanchaudhory@gmail.com>"]
 

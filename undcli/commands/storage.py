@@ -9,13 +9,13 @@ import hashlib
 app = typer.Typer()
 
 @app.command(help="Add an S3 Folder.")
-def add_s3_storage(bucket: str, access_key: str, secret_key: str, region: str, path=""):
+def add_s3_storage(bucket_name: str, access_key: str, secret_key: str, region: str, path=""):
     client = boto3.client(
       's3',
       aws_access_key_id=access_key,
       aws_secret_access_key=secret_key,
     )
-    bucket = client.Bucket(bucket)
+    bucket = client.Bucket(bucket_name)
     if(not bucket.creation_date):
         typer.echo("Bucket does not exist.")
         return
@@ -27,7 +27,7 @@ def add_s3_storage(bucket: str, access_key: str, secret_key: str, region: str, p
         "type": "s3",
         "access_key": access_key,
         "secret_key": secret_key,
-        "bucket": bucket,
+        "bucket": bucket_name,
         "region": region,
         "path": path
     }
@@ -39,9 +39,9 @@ def add_s3_storage(bucket: str, access_key: str, secret_key: str, region: str, p
     typer.echo("Added S3 storage.")
 
 @app.command(help="Add a GCS Folder.")
-def add_gcs_storage(bucket: str, creds_path: str, path="/"):
+def add_gcs_storage(bucket_name: str, creds_path: str, path="/"):
     client = storage.Client.from_service_account_json(creds_path)
-    bucket = client.get_bucket(bucket)
+    bucket = client.get_bucket(bucket_name)
     if(not bucket.exists()):
         typer.echo("Bucket does not exist.")
         return
@@ -52,7 +52,7 @@ def add_gcs_storage(bucket: str, creds_path: str, path="/"):
     config = {
         "type": "gcs",
         "creds_path": creds_path,
-        "bucket": bucket,
+        "bucket": bucket_name,
         "path": path
     }
     with open("config.json", "r") as f:
